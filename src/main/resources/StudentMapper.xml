@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnshu.SpringAndMybatis.DAO.StudentMapper">
+    <insert id="insert" parameterType="student" useGeneratedKeys="true" keyProperty="id">
+       insert into stu(name,qq,type,admission_at,college,student_id,link,wish,senior,way) values(#{name},#{qq},#{type},#{admission_at},#{college},#{student_id},#{link},#{wish},#{senior},#{way})
+	</insert>
+
+    <delete id="delete" parameterType="int">
+		delete from stu where id = #{id}
+	</delete>
+
+    <update id="update" parameterType="student">
+		update stu set name = #{name}, qq = #{qq}, type = #{type},admission_at = #{admission_at}, college = #{college}, student_id = #{student_id},link = #{link}, wish = #{wish}, senior = #{senior},way = #{way} where id = #{id}
+	</update>
+
+    <select id="queryById" parameterType="int" resultType="student">
+        select * from stu where id = #{id}
+    </select>
+
+    <select id="queryAll" resultType="student">
+        select * from stu
+    </select>
+</mapper>
