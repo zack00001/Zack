@@ -25,7 +25,7 @@ public class App {
         }
 //删除数据
         try {
-            int result = studentService.delete(66);
+            boolean result = studentService.delete(66);
             System.out.println(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,7 +35,8 @@ public class App {
         Student student2 = new Student("小强", 123456, "JAVA", "2019-01-01", "清华大学", 456, "www.abc.com", "加油", "大强", "知乎");
 student2.setId(66);
         try {
-            studentService.update(student2);
+            boolean result = studentService.update(student2);
+            System.out.println(result);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("修改数据失败");

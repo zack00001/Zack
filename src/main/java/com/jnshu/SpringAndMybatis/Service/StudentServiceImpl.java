@@ -13,10 +13,10 @@ public class StudentServiceImpl implements StudentService {
     public void insert(Student student) throws Exception{
         studentMapper.insert(student);
     }
-    public int delete(int id) throws Exception{
+    public boolean delete(int id) throws Exception{
         return studentMapper.delete(id);
     }
-    public int update(Student student) throws Exception{
+    public boolean update(Student student) throws Exception{
         return studentMapper.update(student);
     }
     public Student queryById(int id) throws Exception{

@@ -32,10 +32,10 @@ public class StudentServiceImplTest {
     @Test
     public void delete() throws Exception {
         StudentService studentService = (StudentService) applicationContext.getBean("studentService");
-        for (int i = 35; i < 305; i++) {
-            int result = studentService.delete(i);
+
+            boolean result = studentService.delete(33);
             System.out.println(result);
-        }
+
     }
 
     @Test
@@ -44,7 +44,7 @@ public class StudentServiceImplTest {
         Student student2 = new Student("小强", 12345, "JAVA", "2019-01-01", "清华大学", 456, "www.abc.com", "加油", "大强", "知乎");
         student2.setId(5);
 
-        int result = studentService.update(student2);
+        boolean result = studentService.update(student2);
         System.out.println(result);
     }
 
